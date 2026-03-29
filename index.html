@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio QA</title>
+
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      if (savedTheme === "night") {
+        document.documentElement.classList.add("theme-night");
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-soft-light"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <header class="topbar topbar--hero">
+    <nav class="nav nav--hero" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#skills">Skills</a>
+      <a href="#exp">Experiência</a>
+      <a href="#contato">Contato</a>
+
+      <div class="theme-toggle-wrap">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Ativar modo noturno"
+          aria-pressed="false">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" fill="currentColor" />
+                <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <line x1="12" y1="2" x2="12" y2="5" />
+                  <line x1="12" y1="19" x2="12" y2="22" />
+                  <line x1="2" y1="12" x2="5" y2="12" />
+                  <line x1="19" y1="12" x2="22" y2="12" />
+                  <line x1="4.2" y1="4.2" x2="6.5" y2="6.5" />
+                  <line x1="17.5" y1="17.5" x2="19.8" y2="19.8" />
+                  <line x1="4.2" y1="19.8" x2="6.5" y2="17.5" />
+                  <line x1="17.5" y1="6.5" x2="19.8" y2="4.2" />
+                </g>
+              </svg>
+
+              <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" />
+              </svg>
+            </span>
+          </span>
+        </button>
+
+        <div class="theme-hint" id="themeHint">
+          <span id="themeHintText"></span>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <header class="topbar topbar--float" aria-label="Menu flutuante">
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav nav--float" aria-label="Navegação flutuante">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#skills">Skills</a>
+      <a href="#exp">Experiência</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <section class="panel hero alt-left" id="home">
+        <div class="hero-inner panel-inner">
+          <h1 class="title">Natália Almeida <span class="title-accent">• QA</span></h1>
+
+          <div class="terminal reveal">
+            <div class="terminal-bar">
+              <span class="t-dot r"></span><span class="t-dot y"></span><span class="t-dot g"></span>
+            </div>
+            <pre id="term" class="terminal-body"></pre>
+          </div>
+
+          <div class="hero-actions">
+            <a class="hero-cv-btn" href="assets/docs/Natalia Almeida Santos - QA (curriculo).pdf" download>
+              Baixar currículo
+            </a>
+          </div>
+        </div>
+
+        <div class="scanline" aria-hidden="true"></div>
+      </section>
+
+      <section class="panel alt-right" id="sobre">
+        <div class="panel-inner">
+          <div class="sobre-wrapper">
+            <div class="section-head sobre-head">
+              <h2 class="impact">
+                Qualidade como <span class="impact-accent">propósito.</span>
+              </h2>
+            </div>
+
+            <div class="sobre-text reveal">
+              <p>
+                Atuo como QA com foco em estratégia de qualidade e mitigação de riscos.
+                Participo das definições de requisitos com perguntas críticas e critérios de aceitação claros, sempre
+                com visão preventiva.
+              </p>
+
+              <p>
+                Estruturo cenários de teste baseados em risco, conduzo testes exploratórios e desenvolvo automações com
+                foco em cobertura relevante e feedback rápido.
+                Meu objetivo é fortalecer a confiabilidade do produto, reduzir retrabalho e apoiar releases consistentes
+                e sustentáveis.
+                <br><br>
+                Qualidade, para mim, é uma prática contínua de melhoria, integrada ao
+                ciclo de desenvolvimento e orientada à geração de valor para o produto.
+              </p>
+            </div>
+          </div>
+
+          <div class="illust illust-sobre" aria-hidden="true">
+            <span class="avatar-glow"></span>
+            <span class="avatar-shadow"></span>
+
+            <img class="avatar-sobre" src="assets/avatar.png" alt="Avatar ilustrado de Natália usando notebook">
+
+            <div class="notebook-logo">
+
+              <svg class="check-logo" viewBox="0 0 511.999 511.999" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <defs>
+                  <clipPath id="check-fill-clip">
+                    <rect class="check-fill-rect" x="0" y="0" width="0" height="512"></rect>
+                  </clipPath>
+                </defs>
+
+                <g clip-path="url(#check-fill-clip)">
+                  <path d="M427.534,73.084l-224.51,224.51c-6.051,6.051-15.863,6.051-21.914,0l-96.645-96.645L8.099,277.313l145.785,145.785
+        c10.127,10.127,23.862,15.816,38.183,15.816l0,0c14.32,0,28.057-5.69,38.182-15.816l273.65-273.65L427.534,73.084z"
+                    class="check-fill" />
+                  <path d="M478.646,124.196L189.754,413.087c-7.993,7.992-18.043,13.442-28.902,15.872c9.066,6.425,19.956,9.955,31.215,9.955l0,0
+        c14.32,0,28.057-5.69,38.182-15.816l273.65-273.65L478.646,124.196z" class="check-fill check-fill-shadow" />
+                </g>
+
+                <path d="M192.068,447.014c-16.587,0-32.182-6.459-43.912-18.189L2.372,283.04c-3.163-3.163-3.163-8.292,0-11.454l76.366-76.366
+      c3.164-3.163,8.292-3.163,11.455,0l28.668,28.667c3.163,3.163,3.163,8.292,0,11.454c-3.165,3.163-8.293,3.162-11.455,0
+      l-22.94-22.94l-64.911,64.911l140.058,140.058c8.669,8.669,20.195,13.443,32.456,13.443c12.26,0,23.785-4.775,32.456-13.443
+      l186.951-186.952c3.163-3.163,8.291-3.164,11.455,0c3.163,3.163,3.163,8.292,0,11.454L235.979,428.826
+      C224.248,440.555,208.653,447.014,192.068,447.014z" class="check-outline" />
+
+                <path d="M192.068,310.232c-6.303,0-12.228-2.454-16.684-6.911l-45.068-45.068c-3.163-3.163-3.163-8.292,0-11.454
+      c3.164-3.163,8.292-3.163,11.455,0l45.068,45.068c1.396,1.396,3.254,2.165,5.229,2.165s3.833-0.769,5.23-2.166L421.806,67.357
+      c3.164-3.163,8.292-3.163,11.455,0l76.366,76.366c1.518,1.518,2.372,3.579,2.372,5.727s-0.853,4.209-2.372,5.727l-63.787,63.787
+      c-3.164,3.163-8.292,3.162-11.455,0c-3.163-3.163-3.163-8.292,0-11.454l58.061-58.06l-64.91-64.91L208.752,303.321
+      C204.295,307.777,198.369,310.232,192.068,310.232z" class="check-outline" />
+              </svg>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos" class="panel">
+        <div class="panel-inner projetos-layout">
+
+          <div class="projects-copy">
+            <h2 class="projects-heading">
+              Qualidade em <span>prática</span>
+            </h2>
+
+            <div class="projects-controls">
+              <div class="carousel-dots" aria-label="Navegação dos projetos"></div>
+
+              <div class="projects-arrows">
+                <button class="carousel-btn prev" type="button" aria-label="Projeto anterior">‹</button>
+                <button class="carousel-btn next" type="button" aria-label="Próximo projeto">›</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="projects-stage">
+            <div class="carousel" aria-label="Carrossel de projetos">
+              <article class="project-card project project-card--serverest-web">
+                <div class="project-shell">
+                  <div class="project-content">
+
+                    <div class="project-top">
+                      <h3>ServeRest — E2E</h3>
+                      <span class="pill">Selenium • Java • JUnit • Maven</span>
+                    </div>
+
+                    <p class="project-description">
+                      Automação E2E focada em fluxos administrativos e validação de regras de negócio.
+                    </p>
+
+                    <ul class="project-checks">
+                      <li>Fluxos críticos de autenticação e acesso</li>
+                      <li>Validação de regras no painel administrativo</li>
+                      <li>Arquitetura POM com testes reutilizáveis</li>
+                    </ul>
+
+                    <div class="project-links">
+                      <a href="https://github.com/nataliaalmeida-s/Test-Automation-ServeRest" target="_blank"
+                        rel="noreferrer">
+                        Repositório
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="project-media" aria-hidden="true">
+                    <span class="project-glow"></span>
+                    <img class="project-logo" src="assets/projects/serverest_logo.png" alt="">
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card project project-card--juice">
+                <div class="project-shell">
+                  <div class="project-content">
+
+                    <div class="project-top">
+                      <h3>OWASP Juice Shop — E2E</h3>
+                      <span class="pill">Selenium • Java • JUnit • Maven</span>
+                    </div>
+
+                    <p class="project-description">
+                      Automação E2E da jornada do usuário com foco em compra, checkout e segurança.
+                    </p>
+
+                    <ul class="project-checks">
+                      <li>Jornada completa do usuário (login → checkout)</li>
+                      <li>Fluxos de compra, pagamento e segurança</li>
+                      <li>Base escalável com dados centralizados</li>
+                    </ul>
+
+                    <div class="project-links">
+                      <a href="https://github.com/nataliaalmeida-s/Test-Automation-OWASP-Juice-Shop" target="_blank"
+                        rel="noreferrer">
+                        Repositório
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="project-media" aria-hidden="true">
+                    <span class="project-glow"></span>
+                    <img class="project-logo" src="assets/projects/juiceshop_logo.png" alt="">
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card project project-card--bugbank">
+                <div class="project-shell">
+                  <div class="project-content">
+
+                    <div class="project-top">
+                      <h3>BugBank — E2E</h3>
+                      <span class="pill">Selenium • Java • JUnit • Maven</span>
+                    </div>
+
+                    <p class="project-description">
+                      Testes E2E de fluxos financeiros com validação de regras de negócio e consistência de dados.
+                    </p>
+
+                    <ul class="project-checks">
+                      <li>Fluxos financeiros: cadastro, login e transferência</li>
+                      <li>Validação de saldo, extrato e regras de negócio</li>
+                      <li>Testes estáveis com reaproveitamento via POM</li>
+                    </ul>
+
+                    <div class="project-links">
+                      <a href="https://github.com/nataliaalmeida-s/Test-Automation-BugBank" target="_blank"
+                        rel="noreferrer">
+                        Repositório
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="project-media" aria-hidden="true">
+                    <span class="project-glow"></span>
+                    <img class="project-logo" src="assets/projects/bugbank_logo.png" alt="">
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card project project-card--petlov">
+                <div class="project-shell">
+                  <div class="project-content">
+
+                    <div class="project-top">
+                      <h3>Petlov — Treino</h3>
+                      <span class="pill">Selenium 4 • Java • JUnit 5</span>
+                    </div>
+
+                    <p class="project-description">
+                      Projeto de evolução técnica com foco em fundamentos sólidos de automação E2E.
+                    </p>
+
+                    <ul class="project-checks">
+                      <li>Base sólida com Selenium 4 e JUnit 5</li>
+                      <li>Exploração de boas práticas em automação</li>
+                      <li>Projeto focado em evolução técnica contínua</li>
+                    </ul>
+
+                    <div class="project-links">
+                      <a href="https://github.com/nataliaalmeida-s/Test-Automation-Petlov" target="_blank"
+                        rel="noreferrer">
+                        Repositório
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="project-media" aria-hidden="true">
+                    <span class="project-glow"></span>
+                    <img class="project-logo" src="assets/projects/petlov_logo.png" alt="">
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card project project-card--serverest-api project-soon">
+                <div class="project-shell">
+                  <div class="project-content">
+
+                    <div class="project-top">
+                      <h3>ServeRest API — RestAssured</h3>
+                      <span class="pill">Java • RestAssured • JUnit 5 • Maven</span>
+                    </div>
+
+                    <p class="project-description">
+                      Testes de API com foco em contratos, autenticação e organização por recursos.
+                    </p>
+
+                    <ul class="project-checks">
+                      <li>Validação de contratos e status da API</li>
+                      <li>Autenticação reutilizável com tokens</li>
+                      <li>Testes organizados por recursos e endpoints</li>
+                    </ul>
+
+                    <div class="project-links">
+                      <a href="#" class="disabled-link" aria-disabled="true">Repositório (em breve)</a>
+                    </div>
+                  </div>
+
+                  <div class="project-media" aria-hidden="true">
+                    <span class="project-glow"></span>
+                    <img class="project-logo" src="assets/projects/serverest_logo.png" alt="">
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="panel alt-right" id="skills">
+        <div class="panel-inner skills-layout">
+
+          <div class="skills-copy">
+            <h3 class="skills-title">Stack de <span>QA</span></h3>
+            <p class="skills-mini-text">
+              Ferramentas que uso no fluxo de qualidade.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <img src="assets/icons/manual-testing.png" alt="Testes Manuais">
+              <span>Testes Manuais</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/test-automation.png" alt="Automação de Testes">
+              <span>Automação de Testes</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/documentation.png" alt="Documentação">
+              <span>Documentação</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/scrum.png" alt="Metodologia Ágil">
+              <span>Metodologia Ágil</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/selenium.png" alt="Selenium">
+              <span>Selenium</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/java.png" alt="Java">
+              <span>Java</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/postman.png" alt="Postman">
+              <span>Postman</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/git.png" alt="Git">
+              <span>Git</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/github.png" alt="GitHub">
+              <span>GitHub</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/jira.png" alt="JIRA">
+              <span>JIRA</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/api.png" alt="Testes de API">
+              <span>Testes de API</span>
+            </div>
+
+            <div class="skill-card reveal">
+              <img src="assets/icons/jmeter.png" alt="JMeter">
+              <span>JMeter</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="panel alt-left" id="exp">
+        <div class="panel-inner exp-layout">
+          <div class="section-head exp-head">
+            <h2 class="exp-title">Experiência em <span>QA</span></h2>
+          </div>
+
+          <div class="timeline">
+            <span class="timeline-line" aria-hidden="true"></span>
+
+            <article class="timeline-item left" style="--delay: .12s;">
+              <div class="timeline-content">
+                <span class="timeline-date">08/2024 — 05/2025</span>
+                <h3>QA Júnior • Compass UOL</h3>
+
+                <ul class="timeline-list">
+                  <li>Testes manuais, funcionais, exploratórios e de performance;</li>
+                  <li>Execução de regressão e validação de fluxos;</li>
+                  <li>Testes em banco de dados Oracle (consultas e validações);</li>
+                  <li>Documentação de cenários, evidências e bugs.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item right" style="--delay: 0s;">
+              <div class="timeline-content">
+                <span class="timeline-date">02/2024 — 07/2024</span>
+                <h3>Estágio em QA • Compass UOL</h3>
+
+                <ul class="timeline-list">
+                  <li>Testes CRUD em APIs REST;</li>
+                  <li>Automação com Java e JUnit;</li>
+                  <li>Suporte a CI/CD e versionamento;</li>
+                  <li>Acompanhamento e análise de bugs.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel alt-right" id="contato">
+        <div class="panel-inner contato-layout">
+
+          <div class="contato-visual" aria-hidden="true">
+            <div class="contato-avatar-wrap">
+              <span class="contato-glow"></span>
+
+              <img class="avatar-contato" src="assets/avatar-contato.png" alt="">
+
+              <div class="notebook-logo notebook-logo--contato">
+                <svg class="check-logo" viewBox="0 0 512 512" aria-hidden="true">
+                  <defs>
+                    <clipPath id="clipCheckContato">
+                      <path d="M104 274
+                         L208 378
+                         L408 178
+                         L360 130
+                         L208 282
+                         L152 226 Z" />
+                    </clipPath>
+                  </defs>
+
+                  <path class="check-outline" d="M104 274 L208 378 L408 178" />
+
+                  <g clip-path="url(#clipCheckContato)">
+                    <rect class="check-fill check-fill-shadow" x="0" y="0" width="512" height="512"></rect>
+                    <rect class="check-fill check-fill-rect" x="0" y="0" width="0" height="512"></rect>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="contato-copy">
+            <div class="section-head contato-head">
+              <h2 class="contato-title">Vamos <span>conversar?</span></h2>
+              <p class="lead contato-lead">Me encontre por aqui.</p>
+            </div>
+
+            <div class="contact reveal">
+
+              <a class="btn contato-btn" href="https://github.com/nataliaalmeida-s" target="_blank" rel="noreferrer">
+                <span class="btn-icon-wrap" aria-hidden="true">
+                  <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.08 3.29 9.38 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.2-.02-2.18-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.29-5.25-5.73 0-1.27.45-2.31 1.19-3.12-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.19 1.19a11.1 11.1 0 0 1 5.8 0c2.21-1.5 3.18-1.19 3.18-1.19.64 1.59.24 2.77.12 3.06.74.81 1.19 1.85 1.19 3.12 0 4.45-2.7 5.43-5.28 5.72.41.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.21.68.8.56A11.53 11.53 0 0 0 23.5 12.02C23.5 5.66 18.35.5 12 .5Z" />
+                  </svg>
+                </span>
+                <span>GitHub</span>
+              </a>
+
+              <a class="btn contato-btn" href="https://www.linkedin.com/in/nataliaalmeida-s/" target="_blank"
+                rel="noreferrer">
+                <span class="btn-icon-wrap" aria-hidden="true">
+                  <svg class="btn-icon linkedin" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M4.98 3.5a2.24 2.24 0 1 0 0 4.48 2.24 2.24 0 0 0 0-4.48ZM3 8.98h3.96V21H3V8.98ZM9.46 8.98h3.8v1.64h.05c.53-1 1.82-2.06 3.74-2.06 4 0 4.74 2.63 4.74 6.06V21h-3.96v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.97V21H9.46V8.98Z" />
+                  </svg>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+
+              <a class="btn contato-btn" href="mailto:natalialmeida.025@gmail.com">
+                <span class="btn-icon-wrap" aria-hidden="true">
+                  <svg class="btn-icon email" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M3 6c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V6zm2 0 7 5 7-5H5zm14 2.2-6.4 4.6c-.35.25-.85.25-1.2 0L5 8.2V18h14V8.2z" />
+                  </svg>
+                </span>
+                <span>Email</span>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Natália — QA</span>
+      </footer>
+    </div>
+  </main>
+
+  <button id="backToTop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      <path d="M12 5l-7 7h4v7h6v-7h4z" />
+    </svg>
+    <span>Voltar ao topo</span>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
