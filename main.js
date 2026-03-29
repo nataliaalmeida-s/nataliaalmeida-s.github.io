@@ -10,6 +10,31 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 
 let lenis = null;
 
+const isMobile = window.innerWidth <= 768;
+function getScrollOffsetById(id) {
+  if (window.innerWidth <= 768) return -84;
+
+  switch (id) {
+    case "#sobre":
+      return 70;
+
+    case "#projetos":
+      return -15;
+
+    case "#skills":
+      return 30;
+
+    case "#exp":
+      return 20;
+
+    case "#contato":
+      return 30;
+
+    default:
+      return 120;
+  }
+}
+
 if (typeof Lenis !== "undefined") {
   lenis = new Lenis({
     duration: 1.1,
@@ -33,7 +58,8 @@ if (typeof Lenis !== "undefined") {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target, { offset: -70 });
+
+      lenis.scrollTo(target, { offset: getScrollOffsetById(id) });
     });
   });
 } else {
@@ -44,7 +70,16 @@ if (typeof Lenis !== "undefined") {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      const top =
+        target.getBoundingClientRect().top +
+        window.pageYOffset +
+        getScrollOffsetById(id)
+
+      window.scrollTo({
+        top,
+        behavior: "smooth"
+      });
     });
   });
 }
@@ -579,7 +614,7 @@ ScrollTrigger.refresh();
   });
 })();
 
-/* SOBRE — card surge, avatar fica */
+/* SOBRE */
 (() => {
   const panel = document.getElementById("sobre");
   if (!panel || reduceMotion) return;
@@ -587,34 +622,29 @@ ScrollTrigger.refresh();
   const card = panel.querySelector(".sobre-wrapper");
   if (!card) return;
 
-  gsap.set(card, {
-    y: 90,
-    opacity: 0
-  });
+  if (isMobile) {
+    gsap.set(card, { y: 0, opacity: 1 });
+    return;
+  }
+
+  gsap.set(card, { y: 90, opacity: 0 });
 
   ScrollTrigger.create({
     trigger: panel,
-    start: "top 96%",
-    once: false,
+    start: "top 80%",
     onEnter: () => {
       gsap.to(card, {
         y: 0,
         opacity: 1,
-        duration: 1.35,
-        delay: 0.35,
+        duration: 0.8,
         ease: "power3.out"
-      });
-    },
-    onLeaveBack: () => {
-      gsap.set(card, {
-        y: 90,
-        opacity: 0
       });
     }
   });
 })();
 
 /* SKILLS — grid surge, título fica */
+/* SKILLS */
 (() => {
   const panel = document.getElementById("skills");
   if (!panel || reduceMotion) return;
@@ -623,54 +653,40 @@ ScrollTrigger.refresh();
   const cards = panel.querySelectorAll(".skill-card");
   if (!grid || !cards.length) return;
 
-  gsap.set(grid, {
-    y: 80,
-    opacity: 0
-  });
+  if (isMobile) {
+    gsap.set(grid, { y: 0, opacity: 1 });
+    gsap.set(cards, { y: 0, opacity: 1 });
+    return;
+  }
 
-  gsap.set(cards, {
-    y: 26,
-    opacity: 0
-  });
+  gsap.set(grid, { y: 80, opacity: 0 });
+  gsap.set(cards, { y: 26, opacity: 0 });
 
   ScrollTrigger.create({
     trigger: panel,
-    start: "top 97%",
-    once: false,
+    start: "top 82%",
     onEnter: () => {
       const tl = gsap.timeline();
-
       tl.to(grid, {
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        delay: 0.3,
+        duration: 0.55,
         ease: "power3.out"
       });
 
       tl.to(cards, {
         y: 0,
         opacity: 1,
-        duration: 0.75,
+        duration: 0.45,
         ease: "power3.out",
-        stagger: 0.13
-      }, "-=0.18");
-    },
-    onLeaveBack: () => {
-      gsap.set(grid, {
-        y: 80,
-        opacity: 0
-      });
-
-      gsap.set(cards, {
-        y: 26,
-        opacity: 0
-      });
+        stagger: 0.05
+      }, "-=0.2");
     }
   });
 })();
 
 /* CONTATO — conteúdo surge, avatar fica */
+/* CONTATO */
 (() => {
   const panel = document.getElementById("contato");
   if (!panel || reduceMotion) return;
@@ -678,30 +694,66 @@ ScrollTrigger.refresh();
   const copy = panel.querySelector(".contato-copy");
   if (!copy) return;
 
-  gsap.set(copy, {
-    y: 56,
-    opacity: 0
-  });
+  if (isMobile) {
+    gsap.set(copy, { y: 0, opacity: 1 });
+    return;
+  }
+
+  gsap.set(copy, { y: 56, opacity: 0 });
 
   ScrollTrigger.create({
     trigger: panel,
-    start: "top 85%",
-    once: false,
+    start: "top 82%",
     onEnter: () => {
       gsap.to(copy, {
         y: 0,
         opacity: 1,
-        duration: 1,
-        delay: 0.25,
+        duration: 0.7,
         ease: "power3.out"
       });
-    },
-    onLeaveBack: () => {
-      gsap.set(copy, {
-        y: 56,
-        opacity: 0
-      });
     }
+  });
+})();
+
+/* TIMELINE */
+(() => {
+  const panel = document.getElementById("exp");
+  if (!panel) return;
+
+  const items = panel.querySelectorAll(".timeline-item");
+  const line = panel.querySelector(".timeline-line");
+
+  if (!line || items.length === 0) return;
+
+  if (isMobile) {
+    gsap.set(line, { scaleY: 1 });
+    gsap.set(items, { y: 0, opacity: 1 });
+    items.forEach(item => item.classList.add("reveal"));
+    return;
+  }
+
+  animateWhenActive(panel, () => {
+    const tl = gsap.timeline({ paused: true });
+
+    tl.to(line, {
+      scaleY: 1,
+      duration: 0.8,
+      ease: "power2.out"
+    });
+
+    tl.to(items, {
+      y: 0,
+      opacity: 1,
+      duration: 0.55,
+      ease: "power3.out",
+      stagger: 0.18
+    }, "-=0.25");
+
+    tl.call(() => {
+      items.forEach(item => item.classList.add("reveal"));
+    }, null, "-=0.45");
+
+    return tl;
   });
 })();
 
