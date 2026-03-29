@@ -456,7 +456,7 @@ function animateWhenActive(panel, build) {
     const scrolled = y > SHOW_AFTER;
     document.body.classList.toggle("is-scrolled", scrolled);
 
-    if (scrolled) {
+    if (scrolled && window.innerWidth > 768) {
       playMenuHint();
     }
 
